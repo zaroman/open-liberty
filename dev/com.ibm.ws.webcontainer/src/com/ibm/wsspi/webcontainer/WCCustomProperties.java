@@ -299,7 +299,9 @@ public class WCCustomProperties {
     //start 17.0.0.1
     public static boolean USE_MAXREQUESTSIZE_FOR_MULTIPART; //PI75528
 
-    public static boolean ENABLE_MULTI_READ_OF_POST_DATA; //MultiRead
+    public static boolean ENABLE_MULTI_READ_OF_POST_DATA; //MultiRead	
+	public static boolean SET_400_SC_ON_TOO_MANY_PARENT_DIRS;//PI80786
+
     
     static {
         setCustomPropertyVariables(); //initilizes all the variables
@@ -389,6 +391,7 @@ public class WCCustomProperties {
         WCCustomProperties.FullyQualifiedPropertiesMap.put("encodedispatchedrequesturi", "com.ibm.ws.webcontainer.encodedispatchedrequesturi"); //PI67942
         WCCustomProperties.FullyQualifiedPropertiesMap.put("usemaxrequestsizeformultipart", "com.ibm.ws.webcontainer.usemaxrequestsizeformultipart"); //PI75528
         WCCustomProperties.FullyQualifiedPropertiesMap.put("enablemultireadofpostdata", "com.ibm.ws.webcontainer.enablemultireadofpostdata");
+		WCCustomProperties.FullyQualifiedPropertiesMap.put("set400scontoomanyparentdirs", "com.ibm.ws.webcontainer.set400scontoomanyparentdirs"); //PI80786
     }
 
     //some properties require "com.ibm.ws.webcontainer." on the front
@@ -762,6 +765,7 @@ public class WCCustomProperties {
         USE_MAXREQUESTSIZE_FOR_MULTIPART = Boolean.valueOf(WebContainer.getWebContainerProperties().getProperty("com.ibm.ws.webcontainer.usemaxrequestsizeformultipart")).booleanValue();
         
         ENABLE_MULTI_READ_OF_POST_DATA = Boolean.valueOf(WebContainer.getWebContainerProperties().getProperty("com.ibm.ws.webcontainer.enablemultireadofpostdata")).booleanValue(); // MultiRead
+		SET_400_SC_ON_TOO_MANY_PARENT_DIRS = Boolean.valueOf(WebContainer.getWebContainerProperties().getProperty("com.ibm.ws.webcontainer.set400scontoomanyparentdirs")).booleanValue(); //PI80786
 
   
     }

@@ -17,6 +17,8 @@ Bundle-Description: WAS WebContainer 8.0 with Servlet 3.0 support
 WLP-ServerName: IBM WebSphere Liberty
 WLP-ServerVersion: ${liberty.service.version}
 
+IBM-Test-Fixes: PI80876
+
 Service-Component: \
   com.ibm.ws.webcontainer.vhostmgr; \
       implementation:=com.ibm.ws.webcontainer.osgi.DynamicVirtualHostManager;\
